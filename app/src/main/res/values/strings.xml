@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PronunciationMVVM</string>
+    <string name="question_id">Question Id %s:</string>
+</resources>
