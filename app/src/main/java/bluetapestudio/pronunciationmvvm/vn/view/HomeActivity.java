@@ -11,6 +11,7 @@ import java.util.List;
 
 import bluetapestudio.pronunciationmvvm.vn.R;
 import bluetapestudio.pronunciationmvvm.vn.databinding.ActivityHomeBinding;
+import bluetapestudio.pronunciationmvvm.vn.libs.ActivityControl;
 import bluetapestudio.pronunciationmvvm.vn.model.Question;
 import bluetapestudio.pronunciationmvvm.vn.viewmodel.BaseViewModel;
 import bluetapestudio.pronunciationmvvm.vn.viewmodel.HomeViewModel;
@@ -47,11 +48,9 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
     }
 
     private void showDetailQuestionActivity(Question question) {
-        Intent intent = new Intent(this, QuestionDetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("data", question);
-        intent.putExtras(bundle);
-        startActivity(intent);
+        ActivityControl.startActivity(this, QuestionDetailActivity.class, bundle);
     }
 
     @Override
