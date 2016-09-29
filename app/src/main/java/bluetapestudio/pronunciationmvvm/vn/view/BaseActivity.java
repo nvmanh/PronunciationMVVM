@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import bluetapestudio.pronunciationmvvm.vn.libs.ActivityControl;
 import bluetapestudio.pronunciationmvvm.vn.viewmodel.BaseViewModel;
 import bluetapestudio.pronunciationmvvm.vn.viewmodel.IViewModel;
 
@@ -28,6 +29,12 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
     public void onDestroy() {
         super.onDestroy();
         if (getViewModel() != null) getViewModel().onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ActivityControl.backAnimation(this);
     }
 
     public abstract BaseViewModel getViewModel();
